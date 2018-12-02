@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>photo-wall</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 300px;
+            display: flex;
+        }
+        .content img{
+            width: 280px;
+            height: 370px;
+            box-shadow: 0 0 5px 5px rgba(0,0,0,.5);
+        }
+        .wrapper-1 img{
+            transform: rotate(45deg);
+            position: relative;
+        }
+        .wrapper-2 img{
+            transform: rotate(-45deg);
+            margin-left: -280px;
+            position: absolute;
+        }
+        .wrapper-1 img:hover{
+            transform: rotate(-45deg);
+            transform: scale(1.5);
+            box-shadow: 0 0 10px 10px rgba(0,0,0,.5);
+            z-index: 2;
+        }
+        .wrapper-2 img:hover{
+            /*transform: rotate(45deg);*/
+            transform: scale(1.5);
+            /*两个transform的scale和rotate会覆盖执行*/
+            /*所以可以只写一个scale*/
+            box-shadow: 0 0 10px 10px rgba(0,0,0,.5);
+            /*transition: transform 1s ease;*/
+            /*不能把transition写在hover里面，*/
+            /*鼠标移出时hover被remove*/
+            /*效果也自然消失*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content wrapper-1"><img src="student5.png" alt=""></div>
+        <div class="content wrapper-2"><img src="teacher8.jpg" alt=""></div>
+    </div>
+</body>
+</html>

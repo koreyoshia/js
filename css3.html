@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3</title>
+    <!--不同引用-->
+    <!--<link rel="stylesheet" href="">-->
+    <!--css引用用href-->
+    <!--<scrpit src=""></scrpit>-->
+    <!--script引用用src-->
+    <style>
+        /*h1:nth-child(1){*/
+            /*color: #ff0036;*/
+        /*}*/
+        /*.text{*/
+            /*white-space: nowrap; */
+            /*!*超出不换行*!*/
+            /*overflow: hidden; */
+            /*!*溢出隐藏*!*/
+            /*text-overflow: ellipsis; */
+            /*!*其他文本省略号展示*!*/
+            /*word-wrap: break-word ;*/
+            /*!*强制边界换行，不管语义*!*/
+        /*}*/
+        /*div{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*box-shadow: 1px 1px 1px 1px rgba(0,0,0,.5);*/
+        /*}*/
+        /*div{*/
+           /*width: 100px;*/
+            /*height: 100px;*/
+            /*border: 1px solid #000;*/
+            /*!*border-radius: 10px/20px;*!*/
+            /*!*表示横半径四个角和垂直半径四个角*!*/
+            /*!*border-radius: 10px;*!*/
+            /*border-radius: 10px 20px 30px 40px/40px 30px 20px 10px;*/
+        /*}*/
+        div{
+            width: 300px;
+            height: 300px;
+            border: 10px solid rgba(0,0,0,.5);
+            background-image : url("student6.jpg "),url("student6.jpg ");
+            background-repeat: no-repeat ;
+            /*图片从border内顶点开始*/
+            background-size: contain;
+            /*详细参数值参考手册，也可以是数值或者百分比*/
+            /*padding: 30px ;*/
+            /*背景图片定位*/
+            /*background-position: 0 0,100px 100px;*/
+            /*多用于css精灵图img-spirit*/
+            /*background-origin: border-box ;*/
+            /*将图片移至border区顶点，包括border在内，类似的还有padding-box、content-box*/
+            /*background-clip: border-box ;*/
+            /*对背景图片进行裁剪，同样属性还有：padding-box、content-box*/
+            /*海报背景图片字：-webkit-background-clip:text; */
+        }
+    </style>
+</head>
+<body>
+    <!--<h1>1</h1>-->
+    <!--<div>2</div>-->
+    <!--<span>3</span>-->
+    <div></div>
+
+</body>
+</html>

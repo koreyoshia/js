@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+       .container{
+           width: 300px;
+           height: 300px;
+           border: 1px dashed #000000;
+       }
+       .radius{
+           width: 300px;
+           height: 300px;
+           box-sizing: border-box;
+           border: 1px solid #000000;
+           border-radius: 50% 50% ;
+           position: relative;
+       }
+        .content li{
+            list-style: none ;
+            width: 2px;
+            height: 5px;
+            background: #000;
+            position: absolute;
+            margin-left: 149px;
+            transform-origin: 0 149px ;
+        }
+        .content .item{
+            width: 2px;
+            height: 8px;
+            background: #000;
+        }
+        .radius div{
+            position: absolute;
+            margin-left: 140px;
+            margin-top: 140px;
+        }
+        .hour{
+            width: 15px;
+            height: 50px;
+            background: #b8f2a9;
+        }
+        .minute{
+            width: 12px;
+            height: 70px;
+            background: #86daf2;
+        }
+        .second{
+            width: 8px;
+            height: 100px;
+            background: #e5a8de;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="radius">
+            <ul class="content">
+                <li class="item"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="item"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="item"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="item"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="item"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="item"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="item"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="item"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="item"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="item"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="item"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="item"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="hour"></div>
+            <div class="minute"></div>
+            <div class="second"></div>
+        </div>
+    </div>
+    <script>
+        var aLi = document.getElementsByTagName("li");
+
+        var oMinute = document.getElementsByClassName("minute")[0];
+        // console.log(oMinute);
+        // 使用document.getElementsByClassName获取对象时，
+        // 不管是一个还是多个，都要在末尾加上[0]
+        var oSecond = document.getElementsByClassName("second")[0];
+        var oHour = document.getElementsByClassName("hour")[0];
+        var time = new Date();
+        var hour = time.getHours();
+        var minute = time.getMinutes();
+        var second = time.getSeconds();
+        
+        for(var i = 0;i < aLi.length;i++){
+            // 这里是小于而不是小于等于
+            // 一共60个li，所以是0-59
+            // 如果写成小于等于会发生溢出现象导致无法获取
+            aLi[i].style.transform = "rotate(" + i*6 + "deg)";
+        }
+        
+        oSecond.style.transform = "rotate(" + second*6 + "deg)";
+        oMinute.style.transform = "rotate(" + minute*6 + (second/60) + "deg)";
+        oHour.style.transform = "rotate(" + hour*30 + (minute/60) + "deg)";
+
+    </script>
+</body>
+</html>

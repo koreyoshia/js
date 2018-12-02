@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #e572df;
+        }
+        div:hover{
+            /*transition: width 1s ease;*/
+            animation: test 1s ease 1s infinite ;
+            /*test表示定义一个真名函数*/
+            /*第二个1秒表示延时*/
+            /*infinite无限动，其他参数见手册*/
+        }
+        @keyframes test {
+            from{
+                width: 100px;
+            }
+            to{
+                width: 500px;
+            }
+
+            /*除了写from和to外还可以写成百分比*/
+
+            /*0%{*/
+                /*width: 100px;*/
+            /*}*/
+            /*50%{*/
+                /*width: 300px;*/
+            /*}*/
+            /*100%{*/
+                /*width: 600px;*/
+            /*}*/
+
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

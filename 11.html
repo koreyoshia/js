@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 700px;
+            height: 700px;
+        }
+        .container{
+            position: relative;
+            top: 200px;
+            left: 400px;
+            width:200px;
+            height: 200px;
+        }
+        .container div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width:200px;
+            height: 200px;
+            border: 1px dashed #f1f27b;
+            transition: 1.5s ease-in-out;
+        }
+        .upper{
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            background-color: #86daf2;
+        }
+        .lower{
+            transform-style: preserve-3d;
+            backface-visibility: hidden;/*抖动*/
+            transform: rotateY(-180deg);
+            background-color: #e5a8de;
+        }
+        .container:hover .upper{
+            transform: rotateY(180deg);
+        }
+        .container:hover .lower{
+            transform: rotateY(0deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="upper">
+            我在马路边捡到2分钱
+        </div>
+        <div class="lower">
+            把它交给警察叔叔手里边
+        </div>
+    </div>
+</body>
+</html>

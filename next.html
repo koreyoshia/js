@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>next</title>
+</head>
+<body>
+    <div>
+        <div id="box1"></div>
+        <!--text-->
+        <div id="box2"></div>
+    </div>
+
+    <!--新版HTML5的新特性-->
+    <!--<input type="time 、date">-->
+    <!--出现了date和time两种新属性-->
+
+    <script>
+        // 关于处理浏览器的兼容性问题，特别封装next函数
+
+        var oBox1 = document.getElementById("box1");
+        function next(obj) {
+            var nextNode = obj;
+            do{
+                nextNode = nextNode.nextSibling;
+            }while(nextNode && nextNode.nodeType != 1);
+            return nextNode;
+        }
+        //while(nextNode && nextNode.nodeType != 1);
+        //这里条件判断前半部分的nextNode就相当于nextNode ！= null，
+        // 可以省略缩写，判断的最后其实是布尔值
+        console.log(next(oBox1));
+
+    </script>
+</body>
+</html>

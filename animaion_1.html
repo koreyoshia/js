@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation_1</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            /*background: #dff2ef;*/
+        }
+        #box2{
+            width: 50px;
+            height: 50px;
+            background: #e5a8de;
+            position: absolute;
+            animation: right 1s ease infinite ;
+        }
+        @keyframes right {
+            /*多段使用百分比*/
+            0%{
+                top:0;
+                left: 200px;
+            }
+            25%{
+                top:200px;
+                left: 200px;
+            }
+            50%{
+                top:200px;
+                left: 0;
+            }
+            75%{
+                top: 0;
+                left: 0;
+            }
+            100%{
+                left: 200px;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2"></div>
+    </div>
+    <!--也可以引入animate.css中已封装好的动画-->
+    <!--引用方式：<div id="box2 animated"></div>-->
+    <!--将动画文件下载,通过link引入-->
+</body>
+</html>

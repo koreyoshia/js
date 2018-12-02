@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>square叠层设计</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 50%;
+            padding-bottom: 50%;
+            background: #ff0036;
+            height: 0;
+            /*这样没有内容，会从头加padding*/
+        }
+        #div1{
+            background: #e572df;
+        }
+        #div2{
+            background: #52adf2;
+        }
+        #div3{
+            background: #b8f2a9;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div id="div3">
+            </div>
+        </div>
+    </div>
+    <script>
+        var oDiv1 = document.getElementById ("div1");
+        var oDiv2 = document.getElementById ("div2");
+        var oDiv3= document.getElementById ("div3");
+        // oDiv1.onclick = function () {
+        //     console.log("div1");
+        // }
+        // oDiv1.onclick = function () {
+        //     console.log("div1-1");
+        // }
+    //    该事件只能绑定一次，只输出后者
+
+    //    设置监听事件
+    //    三个参数分别为：事件，函数（匿名不匿名都行），布尔值常量
+    //     oDiv1.addEventListener ("click",function () {
+    //         console.log("div1");
+    //     },false)
+    //     oDiv1.addEventListener ("click",function (e) {
+    //         console.log("div1-1");
+    //         e.stopPropagation ();
+    //    阻止事件运行，到此停止，不再冒泡（该条执行完）
+    //     },false)
+    //    e表示事件对象
+    //    false事件冒泡，从里向外；
+    //     true事件捕获，从外向里
+    //    执行顺序：先捕获后冒泡
+
+    //   IE浏览器不支持：
+    //     oDiv1.attachEvent("onclick",function () {
+    //         console.log("div1");
+    //     window.event.cancelBubble = true;
+    //     只能通过window传
+    //     })
+        // IE其实就冒泡，没有捕获
+        // 捕获要加function
+
+    // function testa() {
+    //     console.log(123);
+    // }
+    // oDiv1.addEventListener ("click",testa(),false)
+    //     oDiv1.removeEventListener ("click",testa(),false)
+        // 清除函数，注意值要保持一致
+        // 具名函数不能写大括号，否则会执行，只能写函数名，匿名函数写function
+    </script>
+</body>
+</html>

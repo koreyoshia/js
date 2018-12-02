@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两列布局</title>
+    <style>
+        /*左侧导航区不变右侧内容区变动*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /*两列布局1*/
+        /*.container div{*/
+            /*height: 500px;*/
+        /*}*/
+        /*#left{*/
+            /*float: left;*/
+            /*width: 200px;*/
+            /*background: #e5bbd8;*/
+        /*}*/
+        /*#right{*/
+            /*background: #89eff2;*/
+            /*margin-left: 200px; */
+        /*}*/
+
+        /*两列布局2（未完成）*/
+        /*.container div{*/
+            /*height: 500px;*/
+        /*}*/
+        /*#left{*/
+            /*width: 200px;*/
+            /*background: #f2dfb0;*/
+        /*}*/
+        /*#right{*/
+            /*background: #b8f2f0;*/
+        /*}*/
+
+        /*两列布局3*/
+        /*.container{*/
+            /*display: flex;*/
+            /*!*弹性盒模型*!*/
+        /*}*/
+
+        /*弹性盒模型:*/
+        /*弹性自适应布局*/
+
+        /*盒模型切换：*/
+        /*盒模型只要有两种：普通盒模型和怪异盒模型*/
+        /*普通盒模型宽度：content;*/
+        /*怪异盒模型宽度：content+padding+border*/
+        /*怪异盒模型不会改变页面布局*/
+        /*普通盒模型变怪异盒模型：box-sizing:boder-box*/
+
+        /*.container div{*/
+            /*height: 500px;*/
+        /*}*/
+        /*#left{*/
+            /*width: 200px;*/
+            /*background: #f2dfb0;*/
+        /*}*/
+        /*#right{*/
+            /*background: #b8f2f0;*/
+            /*flex-grow: 1;*/
+            /*!*占比1---占用父级的剩余空间*!*/
+        /*}*/
+
+        .container{
+            display: flex;
+        }
+        .container div{
+            height: 500px;
+            flex-grow: 1;
+        }
+        .box1{
+            background: red ;
+        }
+        /*row-行*/
+        /*column-列*/
+        /*reverse-倒序*/
+    </style>
+</head>
+<body>
+    <!--<div class="container" >-->
+        <!--<div id="left"></div>-->
+        <!--<div id="right"></div>-->
+    <!--</div>-->
+    <div class="container">
+
+    </div>
+</body>
+</html>

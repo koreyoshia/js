@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>.5px</title>
+    <style>
+        /*老式浏览器实现0.5像素*/
+        /*一种：scale缩放*/
+        /*一种：转化怪异盒模型*/
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: #e5a8de;
+            /*border: 1px dashed #e572df;*/
+            /*transform: scale(0.5);*/
+            /*transform-origin: 0 0;*/
+        }
+        .box::after{
+            content: "";
+            display: block;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #89eff2;
+            /*transform: scale(0.5) ;*/
+
+            /*transform-origin: 0 0;*/
+            /*存在大小空隙*/
+            /*用怪异盒模型转化*/
+            /*box-sizing: border-box; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

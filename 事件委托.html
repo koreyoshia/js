@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <button id="btn">添加</button>
+    <script>
+        var oUl = document.getElementsByTagName("ul")[0];
+        var aLi = document.getElementsByTagName("li");
+        var oBtn = document.getElementById("btn");
+
+        oUl.onclick = function (e) {
+            console.log(e.target.innerText);
+        }
+        oBtn.onclick = function () {
+            var newEle = document.createElement("li");
+            newEle.innerText = "111";
+            oUl.appendChild(newEle);
+            // 向对象最后面添加元素
+        }
+        // 通过冒泡实现动态添加，即事件委托
+
+        // 传统循环，新添加事件失效
+        // for(var i = 0;i <  aLi.length;i++){
+        //     aLi[i].onclick = function () {
+        //         console.log(this.innerText);
+        //     }
+        // }
+
+    </script>
+</body>
+</html>

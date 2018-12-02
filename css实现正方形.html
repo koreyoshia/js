@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>square</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #square-1 {
+            width: 100px;
+            height: 100px;
+            background: #ff0036;
+            text-align: center ;
+            line-height: 100px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        #square-2 {
+            width: 50%;
+            padding-bottom: 50%;
+            background: orange ;
+            text-align: center ;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        #square-3 {
+            width: 50%;
+            height: 50vw;
+            color: #ffffff;
+            text-align: center ;
+            font-weight: bold;
+            background: yellow ;
+        }
+        #square-4:after{
+            display: block;
+            content: "";
+            padding-bottom: 100%;
+            background: green ;
+            color: #ffffff;
+            text-align: center ;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="square-1">first square</div>
+    <div id="square-2">second square</div>
+    <!--依据浏览器自适应-->
+    <div id="square-3">third square</div>
+    <div id="square-4">fourth square</div>
+</body>
+</html>

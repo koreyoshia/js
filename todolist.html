@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todolist</title>
+</head>
+<body>
+    <div>
+        <div id="header">
+            <input type="text" id="info">
+            <input type="date" id="info-date">
+            <button id="addBtn">添加</button>
+        </div>
+
+        <!--innerhtml——输出标签内容，会解析dom结构-->
+        <!--innertext——输出内容及标签,不会解析dom结构-->
+        <!--box.innerHTML = "想要输出的文本";-->
+
+        <!--事件三要素：-->
+        <!--事件源-->
+        <!--事件处理函数-->
+        <!--事件对象-->
+        <!--获取当前对象td利用索引循环减-->
+
+        <div id="footer">
+            <table border="1" cellspacing="0" >
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>事件</th>
+                        <th>时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="tb">
+                    <tr>
+                        <td>1</td>
+                        <td>上课</td>
+                        <td>2018-7-10</td>
+                        <td><button class="delBtn">删除</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        var oAddBtn = document.getElementById("addBtn");
+        var aDelBtn = document.getElementsByClassName("delBtn");
+        var oTb = document.getElementById("tb");
+        var thisHtml = "";
+        var index = 2;
+        oAddBtn.onclick = function () {
+            var info = document.getElementById("info").value;
+            var infoDate = document.getElementById("info-date").value;
+            thisHtml =  '<tr>'+
+            '<td>'+(index++)+'</td>'+
+            '<td>'+info+'</td>'+
+            '<td>'+infoDate+'</td>'+
+            '<td><button class="delBtn">删除</button></td>'+
+            '</tr>'
+            oTb.innerHTML += thisHtml ;
+        }
+        oTb.onclick = function (e) {
+            e.target.parentElement.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转立方体</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #000;
+            perspective: 1000px ;
+            /*视角定位一定要基于外面较大的容器去定位*/
+            perspective-origin: center center;
+        }
+        .container{
+            width: 200px;
+            height: 200px;
+            border: 1px dashed #ffffff;
+            margin: 200px auto;
+            position: relative;
+            transform-style: preserve-3d ;
+            animation: run 3s linear infinite;
+            /*ease间歇转动；linear持续转动*/
+        }
+        @keyframes run{
+            from{
+                transform: rotateY(0deg);
+            }
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+        .container div{
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.3) ;
+            border-radius: 10px;
+            position: absolute;
+            color: white;
+            font-weight: bolder;
+            text-align: center ;
+            line-height: 200px;
+        }
+        .front{
+            transform: translateZ(100px);
+            /*translateZ是宽高的一半*/
+        }
+        .back{
+            transform: translateZ(-100px);
+        }
+        .left{
+            /*transform: translateX(-100px ) rotateX(90deg);*/
+            transform:rotateX(90deg) translateZ(-100px);
+        }
+        /*位置一定都是基于Z轴调*/
+        .right{
+            /*transform: translateX(100px ) rotateX(90deg);*/
+            transform:rotateX(90deg) translateZ(100px);
+        }
+        .top{
+            /*transform: translateY(100px) rotateY(90deg);*/
+            transform:rotateY(90deg) translateZ(100px);
+        }
+        .bottom{
+            /*transform: translateY(100px) rotateY(90deg);*/
+            transform:rotateY(90deg) translateZ(-100px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="front">1</div>
+        <div class="back">2</div>
+        <div class="left">3</div>
+        <div class="right">4</div>
+        <div class="top">5</div>
+        <div class="bottom">6</div>
+    </div>
+</body>
+</html>
